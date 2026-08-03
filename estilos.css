@@ -1,161 +1,254 @@
-/* Reset básico de estilos */
-
-
-/* Reset general */
+/* Reset básico */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/* Fondo moderno institucional con gradiente degradado */
+
 body {
-    background-color: #f0f2f5;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    padding: 20px;
 }
 
 
-/* Tarjeta principal de Login */
+/* Manejo de visibilidad */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= VISTA LOGIN ================= */
 
 .login-container {
-    background-color: #ffffff;
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
     padding: 35px 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-
-/* Contenedor y diseño del Logo */
-
 .logo-container {
-    text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .logo-una {
-    width: 90px;
+    max-width: 140px;
     height: auto;
     object-fit: contain;
 }
 
-
-/* Cabecera y textos */
-
-.login-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
 .login-header h2 {
-    color: #0d3b66;
-    font-size: 1.4rem;
+    color: #1a365d;
+    font-size: 1.5rem;
     margin-bottom: 6px;
-    font-weight: 700;
 }
 
 .login-header p {
-    color: #6c757d;
-    font-size: 0.88rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
 }
 
-
-/* Campos de entrada de datos */
-
 .form-group {
+    text-align: left;
     margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
-    color: #333333;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    color: #334155;
     font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 11px 14px;
-    border: 1px solid #cccccc;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
     border-radius: 6px;
     font-size: 0.95rem;
+    outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus {
-    outline: none;
-    border-color: #0d3b66;
-    box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.15);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
+.form-actions {
+    margin-top: 25px;
+}
 
-/* Botón de acceso */
-
-.form-actions button {
+#btn-submit {
     width: 100%;
     padding: 12px;
-    background-color: #0d3b66;
+    background-color: #1e40af;
     color: #ffffff;
     border: none;
     border-radius: 6px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-.form-actions button:hover {
-    background-color: #092846;
+#btn-submit:hover {
+    background-color: #1e3a8a;
 }
 
-
-/* Enlaces del pie */
-
 .login-footer {
-    text-align: center;
     margin-top: 20px;
 }
 
 .login-footer a {
-    color: #0d3b66;
+    color: #2563eb;
     text-decoration: none;
     font-size: 0.85rem;
 }
 
-.login-footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* Alertas de interfaz */
-
 .alert {
-    padding: 10px 14px;
+    padding: 10px;
     border-radius: 6px;
     font-size: 0.85rem;
-    margin-bottom: 18px;
-    text-align: center;
+    margin-bottom: 15px;
 }
 
 .alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
 }
 
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+
+/* ================= VISTA DASHBOARD ================= */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 85vh;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-self: flex-start;
 }
 
-.hidden {
-    display: none;
+
+/* Encabezado Superior */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-top {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.system-title {
+    color: #1e3a8a;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+/* Botón Regresar / Salir */
+
+.btn-back {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #b91c1c;
+}
+
+
+/* Barra de Navegación / Menú */
+
+.main-navbar {
+    background-color: #1e40af;
+}
+
+.main-navbar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navbar li a {
+    display: block;
+    padding: 14px 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.main-navbar li a:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Área de contenido */
+
+.content-area {
+    padding: 30px;
+    flex: 1;
+    background-color: #f8fafc;
+}
+
+.welcome-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #1e40af;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-card h2 {
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.welcome-card p {
+    color: #64748b;
 }

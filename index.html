@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Asesores UNA - Login</title>
+    <title>Sistema de Gestión de Asesores UNA</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-    <div class="login-container">
+    <!-- ================= SECCIÓN DE LOGIN ================= -->
+    <div id="login-section" class="login-container">
         <!-- Sección del Logo UNA -->
         <div class="logo-container">
-            <img src="logoUna.jpg" alt="Logo Universidad Nacional Abierta" class="logo-una">
+            <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
         </div>
 
         <div class="login-header">
@@ -43,6 +44,40 @@
         <div class="login-footer">
             <a href="#" id="forgot-password">¿Olvidó su contraseña?</a>
         </div>
+    </div>
+
+
+    <!-- ================= SECCIÓN DEL DASHBOARD / PANEL PRINCIPAL ================= -->
+    <div id="dashboard-section" class="dashboard-container hidden">
+
+        <!-- Encabezado superior -->
+        <header class="top-bar">
+            <div class="brand">
+                <img src="logouna25.png" alt="Logo UNA" class="logo-top">
+                <h1 class="system-title">Sistema de Gestión de asesores</h1>
+            </div>
+            <button id="btn-logout" class="btn-back">Regresar / Salir</button>
+        </header>
+
+        <!-- Barra de herramientas / Menú principal -->
+        <nav class="main-navbar">
+            <ul>
+                <li><a href="#" class="nav-item">Usuarios</a></li>
+                <li><a href="#" class="nav-item">Alumnos</a></li>
+                <li><a href="#" class="nav-item">Materias</a></li>
+                <li><a href="#" class="nav-item">Carreras</a></li>
+                <li><a href="#" class="nav-item">Asesorías</a></li>
+            </ul>
+        </nav>
+
+        <!-- Área de contenido principal (Se irá construyendo según avancemos) -->
+        <main class="content-area">
+            <div class="welcome-card">
+                <h2>Bienvenido al Sistema</h2>
+                <p id="user-welcome">Seleccione una opción de la barra de herramientas superior para comenzar a operar.</p>
+            </div>
+        </main>
+
     </div>
 
     <script src="script.js"></script>
