@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,7 +12,7 @@
 
     <!-- ================= SECCIÓN DE LOGIN ================= -->
     <div id="login-section" class="login-container">
-        <!-- Sección del Logo UNA -->
+        <!-- Logo UNA -->
         <div class="logo-container">
             <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
         </div>
@@ -23,7 +22,7 @@
             <p>Ingrese sus credenciales de acceso</p>
         </div>
 
-        <!-- Alerta dinámica de error / éxito -->
+        <!-- Alerta de error o éxito -->
         <div id="alert-box" class="alert hidden"></div>
 
         <form id="login-form">
@@ -51,7 +50,7 @@
     <!-- ================= SECCIÓN DEL DASHBOARD / PANEL PRINCIPAL ================= -->
     <div id="dashboard-section" class="dashboard-container hidden">
 
-        <!-- Encabezado superior -->
+        <!-- Encabezado Superior -->
         <header class="top-bar">
             <div class="brand">
                 <img src="logouna25.png" alt="Logo UNA" class="logo-top">
@@ -60,7 +59,7 @@
             <button id="btn-logout" class="btn-back">Regresar / Salir</button>
         </header>
 
-        <!-- Barra de herramientas / Menú principal -->
+        <!-- Barra de Herramientas / Menú Único -->
         <nav class="main-navbar">
             <ul>
                 <li><a href="#" class="nav-item">Usuarios</a></li>
@@ -71,7 +70,7 @@
             </ul>
         </nav>
 
-        <!-- Área de contenido principal (Se irá construyendo según avancemos) -->
+        <!-- Área de Contenido Principal -->
         <main class="content-area">
             <div class="welcome-card">
                 <h2>Bienvenido al Sistema</h2>
@@ -84,91 +83,4 @@
     <script src="script.js"></script>
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Asesores UNA</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-
-<body>
-
-    <!-- ================= SECCIÓN DE LOGIN ================= -->
-    <div id="login-section" class="login-container">
-        <!-- Sección del Logo UNA -->
-        <div class="logo-container">
-            <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
-        </div>
-
-        <div class="login-header">
-            <h2>Gestión de Asesores UNA</h2>
-            <p>Ingrese sus credenciales de acceso</p>
-        </div>
-
-        <!-- Alerta dinámica de error / éxito -->
-        <div id="alert-box" class="alert hidden"></div>
-
-        <form id="login-form">
-            <div class="form-group">
-                <label for="username">Usuario o Correo Institucional</label>
-                <input type="text" id="username" name="username" placeholder="Ej: asesor.una" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-            </div>
-
-            <div class="form-actions">
-                <button type="submit" id="btn-submit">Iniciar Sesión</button>
-            </div>
-        </form>
-
-        <div class="login-footer">
-            <a href="#" id="forgot-password">¿Olvidó su contraseña?</a>
-        </div>
-    </div>
-
-
-    <!-- ================= SECCIÓN DEL DASHBOARD / PANEL PRINCIPAL ================= -->
-    <div id="dashboard-section" class="dashboard-container hidden">
-
-        <!-- Encabezado superior -->
-        <header class="top-bar">
-            <div class="brand">
-                <img src="logouna25.png" alt="Logo UNA" class="logo-top">
-                <h1 class="system-title">Sistema de Gestión de asesores</h1>
-            </div>
-            <button id="btn-logout" class="btn-back">Regresar / Salir</button>
-        </header>
-
-        <!-- Barra de herramientas / Menú principal -->
-        <nav class="main-navbar">
-            <ul>
-                <li><a href="#" class="nav-item">Usuarios</a></li>
-                <li><a href="#" class="nav-item">Alumnos</a></li>
-                <li><a href="#" class="nav-item">Materias</a></li>
-                <li><a href="#" class="nav-item">Carreras</a></li>
-                <li><a href="#" class="nav-item">Asesorías</a></li>
-            </ul>
-        </nav>
-
-        <!-- Área de contenido principal (Se irá construyendo según avancemos) -->
-        <main class="content-area">
-            <div class="welcome-card">
-                <h2>Bienvenido al Sistema</h2>
-                <p id="user-welcome">Seleccione una opción de la barra de herramientas superior para comenzar a operar.</p>
-            </div>
-        </main>
-
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
->>>>>>> 9f00823b5451453efbb8ee66c13db9f1ecd5fb3d
 </html>
