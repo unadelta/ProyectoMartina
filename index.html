@@ -10,40 +10,60 @@
 
 <body>
 
-    <!-- ================= SECCIÓN DE LOGIN ================= -->
+    <!-- ================= SECCIÓN DE LOGIN =================
     <div id="login-section" class="login-container">
-        <!-- Logo UNA -->
+         Logo UNA 
+    <div class="logo-container">
+        <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
+
+    </div>
+    -->
+    <!-- VENTANA PRINCIPAL (LOGIN) -->
+    <section id="login-section">
         <div class="logo-container">
-            <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
+            <img src="logouna25.png" alt="Logo UNA">
         </div>
-
-        <div class="login-header">
-            <h2>Gestión de Asesores UNA</h2>
-            <p>Ingrese sus credenciales de acceso</p>
-        </div>
-
-        <!-- Alerta de error o éxito -->
-        <div id="alert-box" class="alert hidden"></div>
 
         <form id="login-form">
-            <div class="form-group">
-                <label for="username">Usuario o Correo Institucional</label>
-                <input type="text" id="username" name="username" placeholder="Ej: asesor.una" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-            </div>
-
-            <div class="form-actions">
-                <button type="submit" id="btn-submit">Iniciar Sesión</button>
-            </div>
+            <!-- campos de usuario y clave -->
         </form>
+    </section>
 
-        <div class="login-footer">
-            <a href="#" id="forgot-password">¿Olvidó su contraseña?</a>
+
+
+
+
+
+
+
+
+    <div class="login-header">
+        <h2>Gestión de Asesores UNA</h2>
+        <p>Ingrese sus credenciales de acceso</p>
+    </div>
+
+    <!-- Alerta de error o éxito -->
+    <div id="alert-box" class="alert hidden"></div>
+
+    <form id="login-form">
+        <div class="form-group">
+            <label for="username">Usuario o Correo Institucional</label>
+            <input type="text" id="username" name="username" placeholder="Ej: asesor.una" required>
         </div>
+
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" id="btn-submit">Iniciar Sesión</button>
+        </div>
+    </form>
+
+    <div class="login-footer">
+        <a href="#" id="forgot-password">¿Olvidó su contraseña?</a>
+    </div>
     </div>
 
 
