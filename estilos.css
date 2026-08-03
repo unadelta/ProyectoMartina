@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Reset básico */
 
 * {
@@ -251,4 +252,259 @@ body {
 
 .welcome-card p {
     color: #64748b;
+=======
+/* Reset básico */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Fondo moderno institucional con gradiente degradado */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    padding: 20px;
+}
+
+
+/* Manejo de visibilidad */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= VISTA LOGIN ================= */
+
+.login-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-una {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.login-header h2 {
+    color: #1a365d;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-actions {
+    margin-top: 25px;
+}
+
+#btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e40af;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#btn-submit:hover {
+    background-color: #1e3a8a;
+}
+
+.login-footer {
+    margin-top: 20px;
+}
+
+.login-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+}
+
+
+/* ================= VISTA DASHBOARD ================= */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 85vh;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+
+/* Encabezado Superior */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-top {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.system-title {
+    color: #1e3a8a;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+/* Botón Regresar / Salir */
+
+.btn-back {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #b91c1c;
+}
+
+
+/* Barra de Navegación / Menú */
+
+.main-navbar {
+    background-color: #1e40af;
+}
+
+.main-navbar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navbar li a {
+    display: block;
+    padding: 14px 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.main-navbar li a:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Área de contenido */
+
+.content-area {
+    padding: 30px;
+    flex: 1;
+    background-color: #f8fafc;
+}
+
+.welcome-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #1e40af;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-card h2 {
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.welcome-card p {
+    color: #64748b;
+>>>>>>> 9f00823b5451453efbb8ee66c13db9f1ecd5fb3d
 }
