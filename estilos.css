@@ -46,21 +46,21 @@ body {
 .logo-container {
     margin-bottom: 20px;
     text-align: center;
-    /* Centra la imagen horizontalmente */
     width: 100%;
-    /* Asegura que el contenedor ocupe el ancho del formulario */
+    display: block !important;
+    /* Fuerza a que el contenedor se muestre */
+    min-height: 80px;
+    /* Asegura un espacio reservado para la imagen */
 }
 
-
-/* Regla crucial para la imagen dentro del contenedor */
-
 .logo-container img {
-    max-width: 180px;
-    /* Establece un tamaño máximo razonable para el logo */
+    max-width: 150px;
     height: auto;
-    /* Mantiene la proporción de la imagen al ajustar el ancho */
-    display: inline-block;
-    /* Permite la alineación centrada */
+    display: block;
+    margin: 0 auto;
+    visibility: visible !important;
+    /* Previene que reglas del login la oculten */
+    opacity: 1 !important;
 }
 
 .logo-una {
