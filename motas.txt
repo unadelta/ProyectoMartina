@@ -1,0 +1,4 @@
+INSERT INTO asesores (nombre, usuario, clave, cedula) 
+VALUES ('Matías Sarabia', 'msarabia', '123456', 'V-9858269')
+ON CONFLICT (usuario) DO UPDATE 
+SET clave = '123456';

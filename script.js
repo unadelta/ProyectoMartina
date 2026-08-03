@@ -1,122 +1,77 @@
-<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const alertBox = document.getElementById('alert-box');
     const loginSection = document.getElementById('login-section');
     const dashboardSection = document.getElementById('dashboard-section');
-    const btnLogout = document.getElementById('btn-logout');
     const userWelcome = document.getElementById('user-welcome');
-
-    // Manejo del Envío del Formulario de Login
-    loginForm.addEventListener('submit', async(e) => {
-        e.preventDefault();
-
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
-
-        try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            });
-
-            const data = await response.json();
-
-            if (response.ok && data.success) {
-                // Ocultar alerta
-                alertBox.classList.add('hidden');
-
-                // Limpiar formulario
-                loginForm.reset();
-
-                // Personalizar bienvenida
-                userWelcome.textContent = `Bienvenido(a), ${data.usuario.nombre || data.usuario.usuario}. Seleccione una opción de la barra de herramientas superior para comenzar.`;
-
-                // Transición de vistas: Ocultar Login y Mostrar Dashboard
-                loginSection.classList.add('hidden');
-                dashboardSection.classList.remove('hidden');
-            } else {
-                // Mostrar mensaje de error
-                alertBox.textContent = data.message || 'Credenciales incorrectas';
-                alertBox.classList.remove('hidden');
-                alertBox.className = 'alert alert-error';
-            }
-        } catch (error) {
-            console.error('Error al conectar con la API:', error);
-            alertBox.textContent = 'Error de conexión con el servidor.';
-            alertBox.classList.remove('hidden');
-            alertBox.className = 'alert alert-error';
-        }
-    });
-
-    // Botón para Regresar / Cerrar Sesión
-    btnLogout.addEventListener('click', () => {
-        // Ocultar Dashboard y volver a mostrar Login
-        dashboardSection.classList.add('hidden');
-        loginSection.classList.remove('hidden');
-    });
-=======
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
-    const alertBox = document.getElementById('alert-box');
-    const loginSection = document.getElementById('login-section');
-    const dashboardSection = document.getElementById('dashboard-section');
     const btnLogout = document.getElementById('btn-logout');
-    const userWelcome = document.getElementById('user-welcome');
 
-    // Manejo del Envío del Formulario de Login
-    loginForm.addEventListener('submit', async(e) => {
-        e.preventDefault();
+    if (loginForm) {
+        loginForm.addEventListener('submit', async(e) => {
+            e.preventDefault(); // Evitar el recargue de página por defecto
 
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
+            const usernameInput = document.getElementById('username').value.trim();
+            const passwordInput = document.getElementById('password').value.trim();
 
-        try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            });
+            showAlert('Verificando credenciales...', 'info');
 
-            const data = await response.json();
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: usernameInput,
+                        password: passwordInput
+                    })
+                });
 
-            if (response.ok && data.success) {
-                // Ocultar alerta
-                alertBox.classList.add('hidden');
+                const data = await response.json();
 
-                // Limpiar formulario
-                loginForm.reset();
+                if (response.ok && data.success) {
+                    showAlert('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
 
-                // Personalizar bienvenida
-                userWelcome.textContent = `Bienvenido(a), ${data.usuario.nombre || data.usuario.usuario}. Seleccione una opción de la barra de herramientas superior para comenzar.`;
+                    setTimeout(() => {
+                        // Ocultar pantalla de login y mostrar dashboard
+                        loginSection.classList.add('hidden');
+                        dashboardSection.classList.remove('hidden');
 
-                // Transición de vistas: Ocultar Login y Mostrar Dashboard
-                loginSection.classList.add('hidden');
-                dashboardSection.classList.remove('hidden');
-            } else {
-                // Mostrar mensaje de error
-                alertBox.textContent = data.message || 'Credenciales incorrectas';
-                alertBox.classList.remove('hidden');
-                alertBox.className = 'alert alert-error';
+                        if (userWelcome) {
+                            userWelcome.textContent = `Bienvenido(a), ${data.usuario.nombre}. Seleccione una opción del menú para comenzar.`;
+                        }
+                    }, 1000);
+
+                } else {
+                    showAlert(data.message || 'Usuario o contraseña incorrectos', 'error');
+                }
+
+            } catch (error) {
+                console.error('Error al conectar con el servidor:', error);
+                showAlert('Error al conectar con el servidor backend', 'error');
             }
-        } catch (error) {
-            console.error('Error al conectar con la API:', error);
-            alertBox.textContent = 'Error de conexión con el servidor.';
-            alertBox.classList.remove('hidden');
-            alertBox.className = 'alert alert-error';
-        }
-    });
+        });
+    }
 
-    // Botón para Regresar / Cerrar Sesión
-    btnLogout.addEventListener('click', () => {
-        // Ocultar Dashboard y volver a mostrar Login
-        dashboardSection.classList.add('hidden');
-        loginSection.classList.remove('hidden');
-    });
->>>>>>> 9f00823b5451453efbb8ee66c13db9f1ecd5fb3d
+    // Botón Salir / Regresar
+    if (btnLogout) {
+        btnLogout.addEventListener('click', () => {
+            dashboardSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+            if (loginForm) loginForm.reset();
+            hideAlert();
+        });
+    }
+
+    function showAlert(message, type) {
+        if (!alertBox) return;
+        alertBox.textContent = message;
+        alertBox.className = `alert ${type}`;
+        alertBox.classList.remove('hidden');
+    }
+
+    function hideAlert() {
+        if (!alertBox) return;
+        alertBox.classList.add('hidden');
+    }
 });

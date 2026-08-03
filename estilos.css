@@ -252,7 +252,9 @@ body {
 
 .welcome-card p {
     color: #64748b;
-=======
+}
+
+
 /* Reset básico */
 
 * {
@@ -276,10 +278,6 @@ body {
 
 
 /* Manejo de visibilidad */
-
-.hidden {
-    display: none !important;
-}
 
 
 /* ================= VISTA LOGIN ================= */
@@ -506,5 +504,34 @@ body {
 
 .welcome-card p {
     color: #64748b;
->>>>>>> 9f00823b5451453efbb8ee66c13db9f1ecd5fb3d
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Estilos básicos para las alertas en el login */
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.alert.info {
+    background-color: #e0f7fa;
+    color: #006064;
+}
+
+.alert.success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+.alert.error {
+    background-color: #ffebee;
+    color: #b71c1c;
 }
