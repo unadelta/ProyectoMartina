@@ -1,7 +1,18 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+const path = require('path');
+const app = express();
 
+
+
+
+
+
+// 💡 Esta línea permite a Express servir imágenes, CSS y JS desde la carpeta raíz o 'public'
+app.use(express.static(path.join(__dirname, 'public'))); // Si están en una carpeta llamada 'public'
+// O si tus archivos e imágenes están en la raíz del proyecto:
+app.use(express.static(__dirname));
 const app = express();
 
 // Middlewares
