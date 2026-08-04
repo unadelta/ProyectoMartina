@@ -1,556 +1,230 @@
-<<<<<<< HEAD
-/* Reset básico */
+/* Reset general */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-/* Fondo moderno institucional con gradiente degradado */
-
 body {
+    background-color: #f4f6f9;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-    padding: 20px;
 }
 
 
-/* Manejo de visibilidad */
+/* ==========================================
+   PANTALLA DE LOGIN (TARJETA CENTRADA)
+   ========================================== */
 
-.hidden {
-    display: none !important;
-}
-
-
-/* ================= VISTA LOGIN ================= */
-
-.login-container {
+.card-container {
     background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 420px;
-    padding: 35px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
-/* Corrección para visualizar el logo */
 
 .logo-container {
-    margin-bottom: 20px;
-    text-align: center;
     width: 100%;
-    display: block !important;
-    /* Fuerza a que el contenedor se muestre */
-    min-height: 80px;
-    /* Asegura un espacio reservado para la imagen */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-container img {
     max-width: 150px;
     height: auto;
     display: block;
-    margin: 0 auto;
-    visibility: visible !important;
-    /* Previene que reglas del login la oculten */
-    opacity: 1 !important;
 }
 
-.logo-una {
-    max-width: 140px;
-    height: auto;
-    object-fit: contain;
+#login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.login-header h2 {
-    color: #1a365d;
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-}
-
-.login-header p {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-.form-group {
+.input-group {
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    margin-bottom: 18px;
+    width: 100%;
 }
 
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    color: #334155;
+.input-group label {
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
+    color: #333333;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 0.95rem;
+.input-group input {
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+.input-group input:focus {
+    border-color: #0056b3;
 }
 
-.form-actions {
-    margin-top: 25px;
-}
-
-#btn-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: #1e40af;
+.btn-primary {
+    background-color: #0056b3;
     color: #ffffff;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    transition: background-color 0.2s;
 }
 
-#btn-submit:hover {
-    background-color: #1e3a8a;
-}
-
-.login-footer {
-    margin-top: 20px;
-}
-
-.login-footer a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 0.85rem;
-}
-
-.alert {
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-}
-
-.alert-error {
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #f87171;
+.btn-primary:hover {
+    background-color: #003d80;
 }
 
 
-/* ================= VISTA DASHBOARD ================= */
+/* ==========================================
+   PANTALLA DASHBOARD Y BARRA DE HERRAMIENTAS
+   ========================================== */
 
 .dashboard-container {
     width: 100%;
-    max-width: 1200px;
-    min-height: 85vh;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    align-self: flex-start;
-}
-
-
-/* Encabezado Superior */
-
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo-top {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-}
-
-.system-title {
-    color: #1e3a8a;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-
-/* Botón Regresar / Salir */
-
-.btn-back {
-    background-color: #dc2626;
-    color: #ffffff;
-    border: none;
-    padding: 9px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.btn-back:hover {
-    background-color: #b91c1c;
-}
-
-
-/* Barra de Navegación / Menú */
-
-.main-navbar {
-    background-color: #1e40af;
-}
-
-.main-navbar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
-.main-navbar li a {
-    display: block;
-    padding: 14px 22px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease;
-}
-
-.main-navbar li a:hover {
-    background-color: #1d4ed8;
-}
-
-
-/* Área de contenido */
-
-.content-area {
-    padding: 30px;
-    flex: 1;
-    background-color: #f8fafc;
-}
-
-.welcome-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 5px solid #1e40af;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.welcome-card h2 {
-    color: #1e293b;
-    margin-bottom: 8px;
-}
-
-.welcome-card p {
-    color: #64748b;
-}
-
-
-/* Reset básico */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-/* Fondo moderno institucional con gradiente degradado */
-
-body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-    padding: 20px;
-}
-
-
-/* Manejo de visibilidad */
-
-
-/* ================= VISTA LOGIN ================= */
-
-.login-container {
-    background: #ffffff;
-    width: 100%;
-    max-width: 420px;
-    padding: 35px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.logo-container {
-    margin-bottom: 20px;
-}
-
-.logo-una {
-    max-width: 140px;
-    height: auto;
-    object-fit: contain;
-}
-
-.login-header h2 {
-    color: #1a365d;
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-}
-
-.login-header p {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-.form-group {
-    text-align: left;
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    color: #334155;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-.form-actions {
-    margin-top: 25px;
-}
-
-#btn-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: #1e40af;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-#btn-submit:hover {
-    background-color: #1e3a8a;
-}
-
-.login-footer {
-    margin-top: 20px;
-}
-
-.login-footer a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 0.85rem;
-}
-
-.alert {
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-}
-
-.alert-error {
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #f87171;
-}
-
-
-/* ================= VISTA DASHBOARD ================= */
-
-.dashboard-container {
-    width: 100%;
-    max-width: 1200px;
-    min-height: 85vh;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    display: flex;
     flex-direction: column;
-    overflow: hidden;
-    align-self: flex-start;
 }
 
 
-/* Encabezado Superior */
+/* Barra de navegación superior (Navbar) */
 
-.top-bar {
+.navbar {
+    background-color: #003d80;
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-bottom: 2px solid #e2e8f0;
+    padding: 0 25px;
+    height: 65px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.brand {
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-logo {
+    height: 42px;
+    width: auto;
+    background: #ffffff;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-menu a {
+    color: #d1e2ff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.navbar-user {
     display: flex;
     align-items: center;
     gap: 15px;
+    font-size: 14px;
 }
 
-.logo-top {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-}
-
-.system-title {
-    color: #1e3a8a;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-
-/* Botón Regresar / Salir */
-
-.btn-back {
-    background-color: #dc2626;
+.btn-logout {
+    background-color: #dc3545;
     color: #ffffff;
     border: none;
-    padding: 9px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    padding: 8px 14px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.btn-back:hover {
-    background-color: #b91c1c;
-}
-
-
-/* Barra de Navegación / Menú */
-
-.main-navbar {
-    background-color: #1e40af;
-}
-
-.main-navbar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
-.main-navbar li a {
-    display: block;
-    padding: 14px 22px;
-    color: #ffffff;
-    text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s;
 }
 
-.main-navbar li a:hover {
-    background-color: #1d4ed8;
+.btn-logout:hover {
+    background-color: #bd2130;
 }
 
 
-/* Área de contenido */
+/* Contenido Principal */
 
-.content-area {
+.dashboard-content {
     padding: 30px;
-    flex: 1;
-    background-color: #f8fafc;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.welcome-card {
+.content-header {
+    margin-bottom: 25px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
     background: #ffffff;
-    padding: 25px;
+    padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid #1e40af;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #0056b3;
 }
 
-.welcome-card h2 {
-    color: #1e293b;
-    margin-bottom: 8px;
+.card-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-top: 10px;
 }
 
-.welcome-card p {
-    color: #64748b;
-}
+
+/* Utilidades */
 
 .hidden {
     display: none !important;
 }
 
-
-/* Estilos básicos para las alertas en el login */
-
-.alert {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
+.error-msg {
+    color: #d9534f;
     font-size: 14px;
+    margin-top: 15px;
     text-align: center;
-}
-
-.alert.info {
-    background-color: #e0f7fa;
-    color: #006064;
-}
-
-.alert.success {
-    background-color: #e8f5e9;
-    color: #1b5e20;
-}
-
-.alert.error {
-    background-color: #ffebee;
-    color: #b71c1c;
 }

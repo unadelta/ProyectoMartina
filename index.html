@@ -4,101 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Asesores UNA</title>
+    <title>Sistema de Gestión de Asesores - UNA</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-    <!-- ================= SECCIÓN DE LOGIN =================
-    <div id="login-section" class="login-container">
-         Logo UNA 
-    <div class="logo-container">
-        <img src="logouna25.png" alt="Logo Universidad Nacional Abierta" class="logo-una">
-
-    </div>
-    -->
-    <!-- VENTANA PRINCIPAL (LOGIN) -->
-    <section id="login-section">
+    <!-- PANTALLA PRINCIPAL / LOGIN -->
+    <section id="login-section" class="card-container">
+        <!-- Logo Centrado -->
         <div class="logo-container">
-            <img src="logouna25.png" alt="Logo UNA">
+            <img src="logouna45.png" alt="Logo Universidad Nacional Abierta">
         </div>
+
+        <h2>Inicio de Sesión</h2>
 
         <form id="login-form">
-            <!-- campos de usuario y clave -->
+            <div class="input-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ej: msarabia" required autocomplete="username">
+            </div>
+
+            <div class="input-group">
+                <label for="clave">Contraseña:</label>
+                <input type="password" id="clave" name="clave" placeholder="••••••••" required autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="btn-primary">Iniciar Sesión</button>
         </form>
+
+        <p id="error-message" class="error-msg"></p>
     </section>
 
-
-
-
-
-
-
-
-
-    <div class="login-header">
-        <h2>Gestión de Asesores UNA</h2>
-        <p>Ingrese sus credenciales de acceso</p>
-    </div>
-
-    <!-- Alerta de error o éxito -->
-    <div id="alert-box" class="alert hidden"></div>
-
-    <form id="login-form">
-        <div class="form-group">
-            <label for="username">Usuario o Correo Institucional</label>
-            <input type="text" id="username" name="username" placeholder="Ej: asesor.una" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="••••••••" required>
-        </div>
-
-        <div class="form-actions">
-            <button type="submit" id="btn-submit">Iniciar Sesión</button>
-        </div>
-    </form>
-
-    <div class="login-footer">
-        <a href="#" id="forgot-password">¿Olvidó su contraseña?</a>
-    </div>
-    </div>
-
-
-    <!-- ================= SECCIÓN DEL DASHBOARD / PANEL PRINCIPAL ================= -->
-    <div id="dashboard-section" class="dashboard-container hidden">
-
-        <!-- Encabezado Superior -->
-        <header class="top-bar">
-            <div class="brand">
-                <img src="logouna25.png" alt="Logo UNA" class="logo-top">
-                <h1 class="system-title">Sistema de Gestión de asesores</h1>
+    <!-- PANTALLA SECUNDARIA / DASHBOARD CON BARRA DE HERRAMIENTAS -->
+    <section id="dashboard-section" class="dashboard-container hidden">
+        <!-- Barra de Herramientas Superior (Navbar) -->
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="logouna45.png" alt="Logo UNA" class="navbar-logo">
+                <span>Gestión de Asesores</span>
             </div>
-            <button id="btn-logout" class="btn-back">Regresar / Salir</button>
-        </header>
 
-        <!-- Barra de Herramientas / Menú Único -->
-        <nav class="main-navbar">
-            <ul>
-                <li><a href="#" class="nav-item">Usuarios</a></li>
-                <li><a href="#" class="nav-item">Alumnos</a></li>
-                <li><a href="#" class="nav-item">Materias</a></li>
-                <li><a href="#" class="nav-item">Carreras</a></li>
-                <li><a href="#" class="nav-item">Asesorías</a></li>
+            <ul class="navbar-menu">
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#">Asesores</a></li>
+                <li><a href="#">Asesorias</a></li>
+                <li><a href="#">Estudiantes</a></li>
+                <li><a href="#">Reportes</a></li>
             </ul>
+
+            <div class="navbar-user">
+                <span id="user-welcome">Bienvenido(a)</span>
+                <button id="btn-logout" class="btn-logout">Cerrar Sesión</button>
+            </div>
         </nav>
 
-        <!-- Área de Contenido Principal -->
-        <main class="content-area">
-            <div class="welcome-card">
-                <h2>Bienvenido al Sistema</h2>
-                <p id="user-welcome">Seleccione una opción de la barra de herramientas superior para comenzar a operar.</p>
+        <!-- Contenido Principal del Dashboard -->
+        <main class="dashboard-content">
+            <header class="content-header">
+                <h2>Panel Principal</h2>
+                <p>Seleccione una opción de la barra de herramientas para comenzar.</p>
+            </header>
+
+            <div class="dashboard-cards">
+                <!-- Tarjetas informativas de ejemplo -->
+                <div class="info-card">
+                    <h3>Asesores Registrados</h3>
+                    <p class="card-number">--</p>
+                </div>
+                <div class="info-card">
+                    <h3>Atenciones Realizadas</h3>
+                    <p class="card-number">--</p>
+                </div>
             </div>
         </main>
-
-    </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
