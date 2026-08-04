@@ -16,7 +16,7 @@ const pool = new Pool({
     user: 'usuario_una',
     host: 'localhost',
     database: 'gestion_asesores',
-    password: 'clave123',
+    password: 'clave_segura',
     port: 5432,
 });
 
