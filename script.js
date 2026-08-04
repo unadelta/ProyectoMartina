@@ -1,77 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
-    const alertBox = document.getElementById('alert-box');
     const loginSection = document.getElementById('login-section');
     const dashboardSection = document.getElementById('dashboard-section');
+    const errorMessage = document.getElementById('error-message');
     const userWelcome = document.getElementById('user-welcome');
     const btnLogout = document.getElementById('btn-logout');
 
+    // Escuchar el envío del formulario
     if (loginForm) {
         loginForm.addEventListener('submit', async(e) => {
-            e.preventDefault(); // Evitar el recargue de página por defecto
+            e.preventDefault(); // Evita que recargue la página
 
-            const usernameInput = document.getElementById('username').value.trim();
-            const passwordInput = document.getElementById('password').value.trim();
+            const usuario = document.getElementById('usuario').value.trim();
+            const clave = document.getElementById('clave').value.trim();
 
-            showAlert('Verificando credenciales...', 'info');
+            errorMessage.textContent = '';
 
             try {
-                const response = await fetch('/api/login', {
+                // Petición POST al servidor backend (servidor.js)
+                const respuesta = await fetch('/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({
-                        username: usernameInput,
-                        password: passwordInput
-                    })
+                    body: JSON.stringify({ usuario, clave })
                 });
 
-                const data = await response.json();
+                const data = await respuesta.json();
 
-                if (response.ok && data.success) {
-                    showAlert('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
+                if (respuesta.ok && data.exito) {
+                    // Ocultar pantalla de login y mostrar dashboard
+                    loginSection.classList.add('hidden');
+                    dashboardSection.classList.remove('hidden');
 
-                    setTimeout(() => {
-                        // Ocultar pantalla de login y mostrar dashboard
-                        loginSection.classList.add('hidden');
-                        dashboardSection.classList.remove('hidden');
-
-                        if (userWelcome) {
-                            userWelcome.textContent = `Bienvenido(a), ${data.usuario.nombre}. Seleccione una opción del menú para comenzar.`;
-                        }
-                    }, 1000);
-
+                    // Mostrar mensaje de bienvenida con el nombre retornado
+                    userWelcome.textContent = `Bienvenido(a), ${data.nombre || usuario}`;
                 } else {
-                    showAlert(data.message || 'Usuario o contraseña incorrectos', 'error');
+                    errorMessage.textContent = data.mensaje || 'Usuario o contraseña incorrectos.';
                 }
-
             } catch (error) {
                 console.error('Error al conectar con el servidor:', error);
-                showAlert('Error al conectar con el servidor backend', 'error');
+                errorMessage.textContent = 'No se pudo conectar con el servidor. Intente de nuevo.';
             }
         });
     }
 
-    // Botón Salir / Regresar
+    // Botón de Cerrar Sesión
     if (btnLogout) {
         btnLogout.addEventListener('click', () => {
             dashboardSection.classList.add('hidden');
             loginSection.classList.remove('hidden');
-            if (loginForm) loginForm.reset();
-            hideAlert();
+            document.getElementById('clave').value = '';
+            errorMessage.textContent = '';
         });
-    }
-
-    function showAlert(message, type) {
-        if (!alertBox) return;
-        alertBox.textContent = message;
-        alertBox.className = `alert ${type}`;
-        alertBox.classList.remove('hidden');
-    }
-
-    function hideAlert() {
-        if (!alertBox) return;
-        alertBox.classList.add('hidden');
     }
 });
